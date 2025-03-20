@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  # namespace: dev
+  name:  nginx-deploy
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+      env: dev
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: nginx
+        env: dev
+    spec:
+      containers:
+      - name: nginx-container
+        image: 376129840399.dkr.ecr.us-east-1.amazonaws.com/jenkins-ci:v1.24
+        ports:
+        - containerPort: 8080
