@@ -1,0 +1,15 @@
+# pod-with-node-selector.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: utrains
+ #namespace: geolocation
+  labels:
+   app: utrains
+spec:
+  containers:
+  - name: utrains-app
+    image: httpd
+  nodeSelector:
+        size: small
+        env: dev

@@ -20,3 +20,8 @@ spec:
         image: 376129840399.dkr.ecr.us-east-1.amazonaws.com/jenkins-ci:v1.24
         ports:
         - containerPort: 8080
+      tolerations:
+      - key: "color"
+        operator: "Equal"
+        value: "green"
+        effect: "NoSchedule"

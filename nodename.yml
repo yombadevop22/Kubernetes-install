@@ -1,0 +1,14 @@
+# pod-with-node-name.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app4
+ # namespace: geolocation
+  labels:
+   app: utrains2
+spec:
+  nodeName: ip-10-0-3-225.ec2.internal
+  # Replace nodeone.example.com with your own node name
+  containers:
+  - name: utrains-app
+    image: httpd
